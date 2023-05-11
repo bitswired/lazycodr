@@ -11,7 +11,7 @@ console = Console()
 
 
 @app.command()
-def config(
+def credentials(
     openai_api_key: Annotated[str, typer.Option(prompt=True, hide_input=True)],
     github_token: Annotated[str, typer.Option(prompt=True, hide_input=True)],
 ):
