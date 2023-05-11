@@ -1,6 +1,6 @@
 # LazyCodr 🚀
 
-A powerful CLI tool designed to help lazy coders get their work done with AI! LazyCodr automates tasks such as generating commit messages, pull requests, and more, using state-of-the-art AI models.
+A CLI tool designed to help lazy coders get their work done with AI! LazyCodr automates tasks such as generating pull requests, and more, using our beloved AI models.
 
 ## Features 💡
 
@@ -60,7 +60,8 @@ lazycodr pr generate <repo_name> <pr_number>
 
 ## Roadmap 🗺️
 
-> "A lazy programmer is a great programmer,"
+> "A lazy programmer is a great programmer"
+
 We're on a mission to make all of us even lazier 😅!
 There is no clear roadmap, but here are some ideas for LazyCodr's future:
 
