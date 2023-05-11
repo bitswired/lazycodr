@@ -65,11 +65,19 @@ lazycodr pr generate <repo_name> <pr_number>
 We're on a mission to make all of us even lazier 😅!
 There is no clear roadmap, but here are some ideas for LazyCodr's future:
 
-1. **Commit Message Generation**: Automatically generate meaningful commit messages based on your code changes, so you can save time and focus on coding.
-2. **Codebase Conversations**: Chat with your codebase to get AI-powered recommendations and insights about your code, helping you make informed decisions as you work.
-3. **AI-driven Guidance**: Receive step-by-step guidance from AI on how to write new features or implement specific functionality, making it easier to tackle challenging tasks.
-4. **README Generation**: Automatically generate well-structured and informative README files for your projects, ensuring that your documentation is always up to date.
-5. ... replace yourself entirely so you can take 10 jobs in parallel 🤑🤑🤑
+🚀 **Commit Message Generation**: <br />
+Automatically generate meaningful commit messages based on your code changes, so you can save time and focus on coding.
+
+🚀 **Codebase Conversations**: <br />
+Chat with your codebase to get AI-powered recommendations and insights about your code, helping you make informed decisions as you work.
+
+🚀 **AI-driven Guidance**: <br />
+Receive step-by-step guidance from AI on how to write new features or implement specific functionality, making it easier to tackle challenging tasks.
+
+🚀 **README Generation**: <br />
+Automatically generate well-structured and informative README files for your projects, ensuring that your documentation is always up to date.
+
+🚀🚀 ... replace yourself entirely so you can take 10 jobs in parallel 🤑🤑🤑
 
 Remember, even though I'm aiming to make you the laziest 😜 programmer possible, I still appreciate your help.
 If you have any ideas, suggestions, or improvements, feel free to contribute and help make LazyCodr even better for your fellow lazy programmers.
