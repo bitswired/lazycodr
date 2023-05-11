@@ -11,10 +11,12 @@ profile = "black"
 [tool.poetry]
 authors = ["JimZer <jimi.vaubien@protonmail.com>"]
 description = "A CLI tool to help lazy coders get the work done with AI (commit messages, pull requests ...)"
+homepage = "https://github.com/bitswired/lazycodr"
 name = "lazycodr"
 packages = [{include = "lazycodr", from = "src"}]
 readme = "README.md"
-version = "0.1.0"
+repository = "https://github.com/bitswired/lazycodr"
+version = "0.1.1"
 
 [tool.poetry.dependencies]
 httpx = "^0.24.0"

@@ -36,7 +36,7 @@ Before you can use LazyCodr, you'll need to create an OpenAI API key and a GitHu
 After you have both your OpenAI API key and GitHub token, you can configure LazyCodr by running the following command:
 
 ```bash
-lazycodr config
+lazycodr config credentials
 ```
 
 This command will prompt you to enter your API key and GitHub token, which will be securely stored for future use.
@@ -49,7 +49,7 @@ Now you're all set to use LazyCodr! 🚀
 1. Configure LazyCodr with your OpenAI API key and GitHub token:
 
 ```bash
-lazycodr config
+lazycodr config credentials
 ```
 
 2. Use LazyCodr to generate a pull request description:
