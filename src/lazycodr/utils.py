@@ -10,7 +10,10 @@ from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import TokenTextSplitter
 from rich.console import Console
 
-from lazycodr.contants import PR_REFINE_INIT_TEMPLATE_NAME, PR_REFINE_LOOP_TEMPLATE_NAME
+from lazycodr.constants import (
+    PR_REFINE_INIT_TEMPLATE_NAME,
+    PR_REFINE_LOOP_TEMPLATE_NAME,
+)
 from lazycodr.prompts import load_template
 
 console = Console()
