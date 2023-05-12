@@ -16,7 +16,8 @@ name = "lazycodr"
 packages = [{include = "lazycodr", from = "src"}]
 readme = "README.md"
 repository = "https://github.com/bitswired/lazycodr"
-version = "0.1.1"
+version = "0.1.2"
+
 
 [tool.poetry.dependencies]
 httpx = "^0.24.0"

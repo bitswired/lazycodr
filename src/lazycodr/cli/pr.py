@@ -13,16 +13,18 @@ app = typer.Typer()
 
 @app.command()
 def generate(repo_name: str, pr_number: int):
+    pr_template = typer.edit("<Enter PR template here>")
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
         transient=True,
     ) as progress:
-        pr_template = typer.edit()
         progress.add_task(description="Getting diff...", total=None)
         pr_diff = get_pr_diff(repo_name, pr_number)
+
         progress.add_task(description="Generating PR description...", total=None)
         res = generate_pr(pr_diff, pr_template)
+
         md = Markdown(res)
         console.print(md, width=90)
 
