@@ -79,12 +79,12 @@ Receive step-by-step guidance from AI on how to write new features or implement 
 🚀 **README Generation**: <br />
 Automatically generate well-structured and informative README files for your projects, ensuring that your documentation is always up to date.
 
-🚀🚀 ... replace yourself entirely so you can take 10 jobs in parallel 🤑🤑🤑
+🚀 ... replace yourself entirely so you can take 10 jobs in parallel 🤑🤑🤑
 
-Remember, even though I'm aiming to make you the laziest 😜 programmer possible, I still appreciate your help.
+Remember, even though I'm aiming to make you the laziest programmer possible 😜, I still appreciate your help.
 If you have any ideas, suggestions, or improvements, feel free to contribute and help make LazyCodr even better for your fellow lazy programmers.
 
-Together, we can redefine the art of lazy programming! 😎
+Together, we can redefine the art of lazy programming!
 
 ## Contributing 🤝
 
