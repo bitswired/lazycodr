@@ -2,6 +2,8 @@
 
 A CLI tool designed to help lazy coders get their work done with AI! LazyCodr automates tasks such as generating pull requests, and more, using our beloved AI models.
 
+[YouTube Video Introduction](https://youtu.be/-_nZhPcOTIA)
+
 ## Features 💡
 
 - Generate pull request descriptions
