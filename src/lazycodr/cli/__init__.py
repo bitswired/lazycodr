@@ -1,14 +1,17 @@
 import pyfiglet
 import typer
-
-from lazycodr.utils import console
+from rich.console import Console
 
 from .config import app as config
 from .pr import app as pr
+from .readme import app as readme
+
+console = Console()
 
 app = typer.Typer()
 app.add_typer(config, name="config")
 app.add_typer(pr, name="pr")
+app.add_typer(readme, name="readme")
 
 
 def main():

@@ -20,7 +20,7 @@ def credentials(
         "openai_api_key": openai_api_key,
         "github_token": github_token,
     }
-    with open(Path.home() / ".lazy-coder-credentials.json", "w") as outfile:
+    with Path.open(Path.home() / ".lazy-coder-credentials.json", "w") as outfile:
         json.dump(credentials, outfile)
 
     console.print("Credentials saved", style="bold green")

@@ -1,0 +1,11 @@
+
+Your job is to generate an awesome README.md file for my repository.
+As there are yoo many files for you to process at once, I sent you each file individually.
+You extracted from the files only the necessary information useful to create the README.md file.
+Now I provide you all the summaries you generated so you can build the final README.md.
+Here it is:
+<file>
+{context}
+</file>
+
+Write the README.md (make it well-formatted and appealing with some emojis).

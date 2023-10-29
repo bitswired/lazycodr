@@ -3,7 +3,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
-from lazycodr.utils import generate_pr, get_pr_diff
+from lazycodr.utils.pr import generate_pr, get_pr_diff
 
 console = Console()
 

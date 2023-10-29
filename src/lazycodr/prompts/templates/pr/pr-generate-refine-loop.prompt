@@ -2,12 +2,19 @@ Your job is to produce a final pull request description.
 It should be well-formatted for readability with spaces and newlines and use Markdown formatting to make it look nice.
 It shoudl follow the following template:
 <template>
-{{ pr_template }}
+{pr_template}
 <\\template>
-We have provided an existing description up to a certain point: {existing_answer}
+We have provided an existing description up to a certain point:
+
+<exsiting-asnwer>
+{existing_answer}
+</exsiting-asnwer>
+
 We have the opportunity to refine the existing summary (only if needed) with some more context below.
-------------
+
+<additional_info>
 {text}
-------------
+</additional_info>
+
 Given the new context, refine the original summary.
 If the context isn't useful, return the original summary.
