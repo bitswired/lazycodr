@@ -9,7 +9,9 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import StrOutputParser
 from langchain.text_splitter import TokenTextSplitter
-from tqdm import tqdm
+from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, TextColumn, track
+from rich.table import Table
 
 from lazycodr.constants import (
     README_FILE_SUMMARY_GENERATE_TEMPLATE_NAME,
@@ -93,11 +95,9 @@ def num_tokens_from_string(string: str, model: str) -> int:
 
 @use_credentials
 def generate_readme(credentials, repo_path: str, user_ignore_patterns: list[str]):
-    tracked_files = tqdm(
-        tracked_files_generator(repo_path, user_ignore_patterns),
-        leave=False,
-    )
-    batched_tracked_files = batch_iterator(tracked_files, 10)
+    batch_size = 10
+    tracked_files = tracked_files_generator(repo_path, user_ignore_patterns)
+    batched_tracked_files = batch_iterator(tracked_files, batch_size)
 
     tokens = []
     total_tokens = 0
@@ -107,25 +107,33 @@ def generate_readme(credentials, repo_path: str, user_ignore_patterns: list[str]
         tokens.append((x, n))
         total_tokens += n
     tokens.sort(key=lambda x: x[1], reverse=True)
-    typer.echo(total_tokens)
-    for path, n_tokens in tokens:
-        typer.echo(path, n_tokens)
 
+    table = Table(title="Tokens Per File Matched")
+    table.add_column("Path", justify="right", style="cyan", no_wrap=True)
+    table.add_column("Tokens", style="magenta")
+    table.add_row("TOTAL", str(total_tokens))
+    for path, n_tokens in tokens:
+        table.add_row(str(path), str(n_tokens))
+    console = Console()
+    console.print(table)
+
+    message = (
+        "LazyCodr will use AI to generate a sumary of each file matched aboved.\n"
+        "Then it will combine all these summaries into a single context and use"
+        "AI to generate the README.md"
+    )
+    typer.echo(message)
     typer.confirm("Proceed?", abort=True)
 
     summarized_files = []
-    for x in batched_tracked_files:
-        res = exec_batch(x)
+    for batch in track(
+        list(batched_tracked_files),
+        description=f"Summarizing files (batch of {batch_size} parallelized) ...",
+    ):
+        res = exec_batch(batch)
         summarized_files += res
 
     context = "\n".join(summarized_files)
-
-    llm = ChatOpenAI(
-        temperature=0,
-        openai_api_key=credentials["openai_api_key"],
-        model_name="gpt-3.5-turbo-16k",
-        request_timeout=120,
-    )
 
     llm = ChatOpenAI(
         temperature=0,
@@ -136,6 +144,12 @@ def generate_readme(credentials, repo_path: str, user_ignore_patterns: list[str]
     prompt = load_template(README_FILE_SUMMARY_GENERATE_TEMPLATE_NAME).format(
         context=context,
     )
-    runnable = llm | StrOutputParser()
 
-    return runnable.invoke(prompt)
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    ) as progress:
+        progress.add_task(description="Generating README.md ...", total=None)
+        runnable = llm | StrOutputParser()
+        return runnable.invoke(prompt)
