@@ -60,6 +60,12 @@ lazycodr config credentials
 lazycodr pr generate <repo_name> <pr_number>
 ```
 
+3. Use LazyCodr to generate README.md file for a git repo (it will pickup the ignored pattern from the .gitignore if it exists and you can also add additional ones with --ignore option):
+
+```bash
+lazycodr readme generate <repo_name> --ignore=pattern1 --ignore=pattern2 ...
+```
+
 ## Roadmap 🗺️
 
 > "A lazy programmer is a great programmer"
@@ -76,7 +82,7 @@ Chat with your codebase to get AI-powered recommendations and insights about you
 🚀 **AI-driven Guidance**: <br />
 Receive step-by-step guidance from AI on how to write new features or implement specific functionality, making it easier to tackle challenging tasks.
 
-🚀 **README Generation**: <br />
+🚀 [DONE] **README Generation**: <br />
 Automatically generate well-structured and informative README files for your projects, ensuring that your documentation is always up to date.
 
 🚀 ... replace yourself entirely so you can take 10 jobs in parallel 🤑🤑🤑
