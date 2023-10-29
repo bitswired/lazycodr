@@ -1,17 +1,9 @@
-Your job will be to generate an awesome README.md file for my repository.
-As there are yoo many files for you to process at once, I will first send you each file individually.
-Extract from the file only the necessary information useful for the README.md file.
-Later I will provide you all the summary you generated so you can build the final README.md.
-Be thoughtful and retain all the information necessary.
+Your mission is to craft a compelling README.md for my repository. Due to the extensive number of files, we'll tackle this step by step. First, we'll dive into each file one at a time, extracting the essentials for our README. Once we've gathered all the nuggets of information, we'll consolidate them to design the final README.md.
 
+Up to now, we've collated the following summary: {existing_answer}
+Given the fresh context below, let's refine this summary, enriching it where necessary.
 
-We have provided an existing summary up to a certain point: {existing_answer}
-We have the opportunity to refine the existing summary
-(only if needed) with some more context below.
-------------
 <file>
 {text}
 </file>
-------------
-Given the new context, refine the original summary in Italian
-If the context isn't useful, return the original summary.
+Please refine the existing summary in Italian. If the new context doesn't offer any additional insights, retain the original summary.

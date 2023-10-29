@@ -1,9 +1,14 @@
-Your job will be to generate an awesome README.md file for my repository.
-As there are yoo many files for you to process at once, I will first send you each file individually.
-Extract from the file only the necessary information useful for the README.md file.
-Later I will provide you all the summary you generated so you can build the final README.md.
-Be thoughtful and retain all the information necessary.
-Here is one fo the file:
+Given a file from a software repository, extract the following meaningful information that will be essential for building a comprehensive README.md:
+
+File Name: Identify the name of the file.
+Purpose: Summarize the primary purpose or functionality of the file.
+Functions/Methods: List major functions or methods present in the file, along with a brief description of what each does.
+Dependencies: Identify any external libraries or dependencies that this file relies on.
+Usage Examples: If possible, extract any usage examples or code snippets that demonstrate how functions/methods in the file are used.
+Notes: Highlight any special remarks, TODOs, or important comments that give context about the file's usage, limitations, or future improvements.
+Extract this information in a structured format so that it can be efficiently used to build a README.md file later.
+
+Here is the file:
 <file>
 {text}
 </file>

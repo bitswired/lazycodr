@@ -60,12 +60,12 @@ def summarize_file(credentials, file_content: str):
     llm = ChatOpenAI(
         temperature=0,
         openai_api_key=credentials["openai_api_key"],
-        model_name="gpt-3.5-turbo-16k",
+        model_name="gpt-4",
         request_timeout=120,
     )
 
     text_splitter = TokenTextSplitter.from_tiktoken_encoder(
-        chunk_size=4000,
+        chunk_size=6000,
         chunk_overlap=200,
     )
     split_docs = text_splitter.create_documents(texts=[file_content])
