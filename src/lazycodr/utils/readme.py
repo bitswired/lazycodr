@@ -33,9 +33,14 @@ def tracked_files_generator(path: Path, user_ignore_patterns: list[str]):
 
     spec = pathspec.PathSpec.from_lines("gitwildmatch", ignore_patterns)
 
-    for f in files:
-        if not spec.match_file(f) and f.is_file():
-            yield path / f
+    for file_path in files:
+        if not spec.match_file(file_path) and file_path.is_file():
+            try:
+                with file_path.open("r", encoding='utf"8') as f:
+                    f.read()
+                yield path / file_path
+            except UnicodeDecodeError:
+                continue
 
 
 def batch_iterator(generator, batch_size):
