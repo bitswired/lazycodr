@@ -16,6 +16,7 @@ from rich.table import Table
 from lazycodr.constants import (
     README_FILE_SUMMARY_GENERATE_TEMPLATE_NAME,
     README_FILE_SUMMARY_REFINE_INIT_TEMPLATE_NAME,
+    README_FILE_SUMMARY_REFINE_LOOP_TEMPLATE_NAME,
 )
 from lazycodr.prompts import load_template
 
@@ -55,7 +56,7 @@ def batch_iterator(generator, batch_size):
 @use_credentials
 def summarize_file(credentials, file_content: str):
     init_prompt = load_template(README_FILE_SUMMARY_REFINE_INIT_TEMPLATE_NAME)
-    refine_prompt = load_template(README_FILE_SUMMARY_REFINE_INIT_TEMPLATE_NAME)
+    refine_prompt = load_template(README_FILE_SUMMARY_REFINE_LOOP_TEMPLATE_NAME)
 
     llm = ChatOpenAI(
         temperature=0,
