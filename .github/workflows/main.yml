@@ -37,7 +37,7 @@ jobs:
       run: poetry install
 
     - name: Build
-      run: poetry install
+      run: poetry build
 
     - name: Publish to PyPI
       env:
