@@ -10,10 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    # - name: Checkout repository
+    #   uses: actions/checkout@v2
 
-    - name: Build and publish to PyPI
-      uses: JRubics/poetry-publish@v1.16
+    # - name: Build and publish to PyPI
+    #   uses: JRubics/poetry-publish@v1.16
+    #   with:
+    #     pypi_token: ${{ secrets.PYPI_TOKEN }}
+    - uses: actions/checkout@v4
+    - name: Install poetry
+      run: pipx install poetry
+    - name: Check if tag matches the Poetry version
+      run: |
+        TAG_VERSION=${GITHUB_REF#refs/tags/v}  # Strips 'refs/tags/v' leaving just the version number.
+        POETRY_VERSION=$(poetry version --short)
+        echo "Tag version: $TAG_VERSION"
+        echo "Poetry version: $POETRY_VERSION"
+        if [[ "$TAG_VERSION" != "$POETRY_VERSION" ]]; then
+          echo "Error: Tag version ($TAG_VERSION) does not match the version in pyproject.toml ($POETRY_VERSION)"
+          exit 1
+        fi
+      shell: bash
+    - uses: actions/setup-python@v4
       with:
-        pypi_token: ${{ secrets.PYPI_TOKEN }}
+        python-version: '3.10'
+        cache: 'poetry'
+    - run: poetry install
